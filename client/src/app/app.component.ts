@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from "./components/footer/footer.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { HomeComponent } from "./pages/home/home.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule],
+  imports: [RouterOutlet, HttpClientModule, FooterComponent, HeaderComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="chat-container min-h-screen pb-32" >
+  <div class="max-w-4xl mx-auto px-4 pt-8 space-y-6">
+    <div *ngFor="let registro of registroChat" class="text-4xl">
+    </div>
+    <div *ngIf="ocupado" class="flex justify-center items-center py-4">
+      <div class="loader"></div>
+    </div>
+  </div>
+</div>
+
+<div class="fixed left-0 bottom-0 w-full" >
+  <div class="max-w-4xl mx-auto">
+    <div class="flex items-center rounded-lg border" >
+      <input
+        class="flex-grow px-4 py-2 bg-transparent outline-none"
+        type="text"
+        placeholder="Type your message..."
+        [disabled]="ocupado"
+        (keydown.enter)="enviarRespuesta()"
+      />
+      <button class="p-2"  [disabled]="ocupado" (click)="enviarRespuesta()">
+        <i class="send-icon"></i>
+      </button>
+      <button class="p-2"  [disabled]="ocupado" (click)="nuevaSesion()">
+        <i class="trash-icon"></i>
+      </button>
+      <button class="p-2"  (click)="toggleDarkMode()">
+        <i *ngIf="darkMode" class="sun-icon"></i>
+        <i *ngIf="!darkMode" class="moon-icon"></i>
+      </button>
+    </div>
+  </div>
+</div>

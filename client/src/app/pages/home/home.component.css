@@ -1,0 +1,70 @@
+:root {
+  --header-bg-color: #000;
+  --header-text-color: #fff;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.message {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark .message.sistema_pregunta {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.dark .message.sistema_respuesta {
+  background-color: #1e3a8a;
+  color: #e5e7eb;
+}
+
+.dark .message.usuario {
+  background-color: #4b5563;
+  color: #e5e7eb;
+  text-align: right;
+}
+
+.message.sistema_pregunta {
+  background-color: #e5e7eb;
+}
+
+.message.sistema_respuesta {
+  background-color: #dbeafe;
+}
+
+.message.usuario {
+  background-color: #f3f4f6;
+  text-align: right;
+}
